@@ -1,66 +1,182 @@
-/* Importando a font Poppins (Google Fontes) */
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,800;1,300;1,600&display=swap');
+/* Importando a font Pooppins (Google Fontes) */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;600;900&display=swap');
 
-  /* __________________________________________________ */
+  /* ________________________________________________ */
   /* Reset (Básico) */
 
-  .{
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
   }
 
-  html{
+  html {
     /* Variáveis em CSS */
 
     --corPrimaria: #017143;
-    
+
     --corSecundaria: #333;
 
     --corTerciaria: #fff;
 
-
   }
 
-  /* ________________________________________________ */
-  /* Main */
+    /* ________________________________________________ */
+    /* Main */
 
-  main{
-    position: relative;
-    width: 100%;
-    min-height: 100vh; /*Altura da 1 tela (view height)*/
-    padding: 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--corTerciaria); /*Chamada da variável*/
-  }
+    main {
+        position: relative;
+        width: 100%;
+        min-height: 100vh; /* Altura de 1 tela (view height) */
+        padding: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--corTerciaria); /* Chamada da variável (Cor) -*/
+    }
 
-  /* ________________________________________________ */
-  /* Header */
+    /* ________________________________________________ */
+    /* Header */
 
-  header{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+    header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-  header.logo{
-    position: relative;
-    max-width: 80px;
-  }
+    }
 
-  header.logo:hover{
-    filter: invert(0.1); /*Controla o nível de contraste*/
-  }
+    header .logo {
+      position: relative;
+      max-width: 80px;
+    }
 
-  header ul{
-    position: relative;
-    display: flex; /*Põe os links em linha (Menu)*/
-  }
+    header .logo:hover {
+      filter: invert(0.1); /* Controla o nível de contraste */
+
+    }
+    header ul {
+      position: relative;
+      display: flex; /* Põe os links em linha (Menu) */
+    }
+
+    header ul li {
+      list-style: none; /* Remove estilo da lista (Bolinha) */
+    }
+
+    header ul li a {
+      display: inline-block; /* Garante que o link fique sempre em linha*/
+      color: var(--corSecundaria);
+      font-size: 20px;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 5px;
+      margin-left: 40px;
+
+    }
+
+    header ul li a:hover {
+      background-color: var(--corPrimaria);
+      color: var(--corTerciaria);
+      border-radius: 10px;
+
+    }
+
+    /* ________________________________________________ */
+    /* Conteudo */
+
+    .conteudo {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .conteudo .textoPrincipal {
+      position: relative;
+      max-width: 600px; /* Largura área de texto */
+    }
+
+    .conteudo .textoPrincipal h2 {
+      color: var(--corSecundaria);
+      font-size: 2.5em; /* 1em = 1 x tamanho fonte elemento (16px)*/
+      line-height: 1.5em; /* Espaçamento vertical */
+      font-weight: 400;
+
+    }
+
+    .conteudo .textoPrincipal h2 span {
+      color: var(--corPrimaria);
+      font-size: 1.2em;
+      font-weight: 900;
+
+    }
+    .conteudo .textoPrincipal p {
+      color: var(--corSecundaria);
+    }
+
+    /* Botão */
+    .conteudo .textoPrincipal a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 8px 20px;
+      background: var(--corPrimaria);
+      color: var(--corTerciaria);
+      border-radius: 40px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-decoration: none;
+
+    }
+
+    .conteudo .textoPrincipal a:hover {
+      background: var(--corSecundaria);
+      color: var(--corTerciaria);
+    }
+
+    /* ________________________________________________ */
+    /* Sorvete */
+
+    .conteudo .imgBox {
+      width: 600px;
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 50px;
+      margin-top: 50px;
+    }
+
+    .conteudo .imgBox img {
+      max-width: 340px;
+    }
+
+    /* Sorvetes pequenos */
+
+    .sorvetes {
+      position: absolute;
+      left: 50%;
+      bottom: 20px;
+      transform: translate(-50%); /*Compensa o ajuste centralizando*/
+      display: flex;
+    }
+
+    .sorvetes li {
+      list-style: none;
+      display: inline-block;
+      margin: 0 20px;
+      cursor: pointer; /*transforma o cursor em uma mão*/
+      transition: 0.5s; /*Tempo de transição*/
+    }
+
+    .sorvetes li:hover {
+      transform: translateY(-15px); /*Movimenta 15 no eixo Y*/
+    }
+
+    .sorvetes li img {
+      max-width: 60px;
+    }
